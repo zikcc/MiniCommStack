@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/server.dir/src/Server.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Server.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/Server.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/server.dir/src/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/Protocol.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/server.dir/src/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Packet.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/Packet.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/server.dir/src/Crawler.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Crawler.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/Crawler.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/client.dir/src/Client.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Client.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/Client.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/client.dir/src/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/Protocol.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/client.dir/src/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Packet.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/Packet.cpp"
+}
+]

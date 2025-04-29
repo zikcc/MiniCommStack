@@ -1,0 +1,4 @@
+# Fragment common to C and C++ source files
+CompileFlags:
+    Add:
+        - "--include-directory=./include"

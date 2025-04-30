@@ -78,7 +78,7 @@ bool Protocol::receive_packet(Packet& pkt) {
     // insert 函数是 C++ 标准库中的一个函数，用于将一个元素插入到容器中
     // first, last 是迭代器，表示要插入的元素的范围
     // 这里将 len_buf 插入到 combined 的末尾
-    // 然后插入 buffer 的 begin 到 end 之间的元素   
+    // 然后插入 buffer 的 begin 到 end 之间的元素
     combined.insert(combined.end(), len_buf, len_buf + 6);          // 插入 header+length
     combined.insert(combined.end(), buffer.begin(), buffer.end());  // 插入 payload + checksum
 

@@ -30,15 +30,15 @@ public:
 
 private:
     std::vector<std::thread> workers;  // 工作线程
-    std::queue<Task>        tasks;    // 任务队列
+    std::queue<Task> tasks;    // 任务队列
     // std::mutex 是一个互斥锁，用于保护共享资源
     // 它是一个线程安全的锁，可以防止多个线程同时访问共享资源
     // 什么时候需要使用互斥锁？
-    std::mutex              mtx;
+    std::mutex mtx;
     // std::condition_variable 是一个条件变量，用于线程之间的同步
     // 它是一个条件变量，用于线程之间的同步
     std::condition_variable cv;
     // std::atomic 是一个原子变量，用于线程之间的同步
     // 它是一个原子变量，用于线程之间的同步
-    std::atomic<bool>       stop;
+    std::atomic<bool> stop;
 };

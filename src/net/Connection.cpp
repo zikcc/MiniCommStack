@@ -1,88 +1,81 @@
 #include "net/Connection.hpp"
-#include <errno.h>
-#include <cstring>
+#include "utils/Metrics.hpp"
+#include "utils/Logger.hpp"
 #include <iostream>
+#include <cstring>
+#include <chrono>
 
-constexpr size_t BUFFER_SIZE = 4096;
-
-Connection::Connection(int fd) : fd(fd) {
-    readBuffer.reserve(BUFFER_SIZE);
-    writeBuffer.reserve(BUFFER_SIZE);
+Connection::Connection(int fd_) : fd(fd_), proto(fd_) {
+    Metrics::getInstance().incrementConnections();
+    LOG_INFO("New connection created: fd=%d", fd);
 }
 
 Connection::~Connection() {
-    close(fd);
+    if (fd >= 0) {
+        Metrics::getInstance().decrementConnections();
+        close(fd);
+        LOG_INFO("Connection closed: fd=%d", fd);
+    }
 }
 
 int Connection::getFd() const {
     return fd;
 }
 
-bool Connection::readToBuffer() {
-    char buf[BUFFER_SIZE];
-    while (true) {
-        ssize_t n = recv(fd, buf, sizeof(buf), 0);
-        if (n > 0) {
-            readBuffer.insert(readBuffer.end(), buf, buf + n);
-            parsePacketsFromBuffer();
-        } else if (n == 0) {
-            return false; // 连接关闭
-        } else {
-            if (errno == EAGAIN || errno == EWOULDBLOCK) {
-                break; // 非阻塞无数据
-            }
-            return false; // 其他错误
+bool Connection::handleRead() {
+    auto start = std::chrono::high_resolution_clock::now();
+    
+    Packet request;
+    if (!proto.receive_packet(request)) {
+        Metrics::getInstance().incrementErrors();
+        LOG_ERROR("Failed to receive packet from fd=%d", fd);
+        return false;
+    }
+
+    // 记录接收的字节数
+    Metrics::getInstance().incrementBytesReceived(request.length + 8);  // 8 = header(2) + length(4) + checksum(2)
+    Metrics::getInstance().incrementRequests();
+
+    // 处理收到的数据包（这里简单回显）
+    Packet response;
+    response.header = 0xABCD;
+    response.payload = "Server received: " + request.payload;
+    response.length = response.payload.length();
+    response.checksum = calculate_checksum(
+        std::vector<uint8_t>(response.payload.begin(), response.payload.end())
+    );
+
+    // 将响应加入待发送队列
+    pending_packets.push_back(response);
+    
+    // 记录处理延迟
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+    Metrics::getInstance().recordLatency(duration.count());
+    
+    // 尝试立即发送
+    return handleWrite();
+}
+
+bool Connection::handleWrite() {
+    auto start = std::chrono::high_resolution_clock::now();
+    
+    while (!pending_packets.empty()) {
+        if (!proto.send_packet(pending_packets.front())) {
+            Metrics::getInstance().incrementErrors();
+            LOG_ERROR("Failed to send packet to fd=%d", fd);
+            return false;
         }
+        
+        // 记录发送的字节数
+        Metrics::getInstance().incrementBytesSent(pending_packets.front().length + 8);
+        pending_packets.erase(pending_packets.begin());
     }
+    
+    // 记录发送延迟
+    auto end = std::chrono::high_resolution_clock::now();
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+    Metrics::getInstance().recordLatency(duration.count());
+    
     return true;
-}
-
-void Connection::parsePacketsFromBuffer() {
-    while (true) {
-        if (readBuffer.size() < Packet::header.size()) break;
-
-        uint32_t packetSize = Packet::peekLength(readBuffer.data());
-        if (readBuffer.size() < packetSize) break;
-
-        std::shared_ptr<Packet> pkt = std::make_shared<Packet>();
-        pkt->deserialize(readBuffer.data(), packetSize);
-        receivedPackets.push(pkt);
-
-        readBuffer.erase(readBuffer.begin(), readBuffer.begin() + packetSize);
-    }
-}
-
-bool Connection::hasCompletePacket() const {
-    return !receivedPackets.empty();
-}
-
-std::shared_ptr<Packet> Connection::getPacket() {
-    if (receivedPackets.empty()) return nullptr;
-    auto pkt = receivedPackets.front();
-    receivedPackets.pop();
-    return pkt;
-}
-
-void Connection::sendPacket(const Packet& packet) {
-    std::vector<char> raw = packet.serialize();
-    writeBuffer.insert(writeBuffer.end(), raw.begin(), raw.end());
-}
-
-bool Connection::writeFromBuffer() {
-    while (!writeBuffer.empty()) {
-        ssize_t n = send(fd, writeBuffer.data(), writeBuffer.size(), 0);
-        if (n > 0) {
-            writeBuffer.erase(writeBuffer.begin(), writeBuffer.begin() + n);
-        } else {
-            if (errno == EAGAIN || errno == EWOULDBLOCK) {
-                break;
-            }
-            return false; // 错误
-        }
-    }
-    return true;
-}
-
-bool Connection::hasPendingWrite() const {
-    return !writeBuffer.empty();
 }

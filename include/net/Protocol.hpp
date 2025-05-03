@@ -1,24 +1,29 @@
-#pragma once
-
-#include "net/Packet.hpp"
-#include <string>
+#pragma once  // 防止头文件重复包含
+#include "Packet.hpp"
+#include <vector>
 
 class Protocol {
 public:
-    // 构造函数 
-    // 参数：socket_fd 是 socket 描述符 
-    Protocol(int socket_fd);
-    // 析构函数
+    /**
+     * 构造函数
+     * @param socket_fd 已连接的 socket 文件描述符，由外部管理生命周期
+     */
+    explicit Protocol(int socket_fd);
+
+    // 禁止拷贝构造和赋值
+    Protocol(const Protocol&) = delete;
+    Protocol& operator=(const Protocol&) = delete;
+
     ~Protocol();
-    // 发送Packet
-    // 参数：pkt 是要发送的 Packet 对象
-    bool send_packet(const Packet& pkt);
-    // 接收Packet
-    // 参数：pkt 是要接收的 Packet 对象
-    // 返回值：true 表示接收成功，false 表示接收失败
-    bool receive_packet(Packet& pkt);
+
+    bool tryReceivePacket(Packet& pkt);
+    void enqueuePacket(const Packet& pkt);
+    bool flushSendBuffer();
 
 private:
-    // socket 描述符    
-    int sockfd;
+    bool parseFromBuffer(std::vector<uint8_t>& buffer, Packet& pkt);
+
+    const int sockfd_;           
+    std::vector<uint8_t> send_buffer_;
+    std::vector<uint8_t> recv_buffer_;
 };

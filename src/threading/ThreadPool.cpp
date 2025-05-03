@@ -16,7 +16,11 @@ ThreadPool::ThreadPool(size_t threads) : stop(false) {
         // 这个 lambda 表达式会不断地从任务队列中获取任务并执行 
         // 为什么要捕获 this？
         // 因为 lambda 表达式需要访问 ThreadPool 类的成员变量和成员函数
-        // 捕获 this 可以使得 lambda 表达式可以访问 ThreadPool 类的成员变量和成员函数   
+        // 捕获 this 可以使得 lambda 表达式可以访问 ThreadPool 类的成员变量和成员函数  
+        /*
+        等价于显式创建线程：
+        workers.push_back(std::thread([this]{  ...  }));
+        */ 
         workers.emplace_back([this] {
                 while (true) {
                     // 为什么要实现task？

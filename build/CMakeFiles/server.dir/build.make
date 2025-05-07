@@ -69,80 +69,127 @@ include CMakeFiles/server.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/server.dir/flags.make
 
-CMakeFiles/server.dir/src/Server.cpp.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/src/Server.cpp.o: ../src/Server.cpp
-CMakeFiles/server.dir/src/Server.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/src/Server.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/Server.cpp.o -MF CMakeFiles/server.dir/src/Server.cpp.o.d -o CMakeFiles/server.dir/src/Server.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Server.cpp
+CMakeFiles/server.dir/main/main_server.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/main/main_server.cpp.o: ../main/main_server.cpp
+CMakeFiles/server.dir/main/main_server.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/server.dir/main/main_server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/main/main_server.cpp.o -MF CMakeFiles/server.dir/main/main_server.cpp.o.d -o CMakeFiles/server.dir/main/main_server.cpp.o -c /home/lzk/Desktop/MiniCommStack/main/main_server.cpp
 
-CMakeFiles/server.dir/src/Server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/Server.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/Server.cpp > CMakeFiles/server.dir/src/Server.cpp.i
+CMakeFiles/server.dir/main/main_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/main/main_server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/main/main_server.cpp > CMakeFiles/server.dir/main/main_server.cpp.i
 
-CMakeFiles/server.dir/src/Server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/Server.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/Server.cpp -o CMakeFiles/server.dir/src/Server.cpp.s
+CMakeFiles/server.dir/main/main_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/main/main_server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/main/main_server.cpp -o CMakeFiles/server.dir/main/main_server.cpp.s
 
-CMakeFiles/server.dir/src/Protocol.cpp.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/src/Protocol.cpp.o: ../src/Protocol.cpp
-CMakeFiles/server.dir/src/Protocol.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/src/Protocol.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/Protocol.cpp.o -MF CMakeFiles/server.dir/src/Protocol.cpp.o.d -o CMakeFiles/server.dir/src/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp
+CMakeFiles/server.dir/src/app/Server.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/app/Server.cpp.o: ../src/app/Server.cpp
+CMakeFiles/server.dir/src/app/Server.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/server.dir/src/app/Server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/app/Server.cpp.o -MF CMakeFiles/server.dir/src/app/Server.cpp.o.d -o CMakeFiles/server.dir/src/app/Server.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/app/Server.cpp
 
-CMakeFiles/server.dir/src/Protocol.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/Protocol.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp > CMakeFiles/server.dir/src/Protocol.cpp.i
+CMakeFiles/server.dir/src/app/Server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/app/Server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/app/Server.cpp > CMakeFiles/server.dir/src/app/Server.cpp.i
 
-CMakeFiles/server.dir/src/Protocol.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/Protocol.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp -o CMakeFiles/server.dir/src/Protocol.cpp.s
+CMakeFiles/server.dir/src/app/Server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/app/Server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/app/Server.cpp -o CMakeFiles/server.dir/src/app/Server.cpp.s
 
-CMakeFiles/server.dir/src/Packet.cpp.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/src/Packet.cpp.o: ../src/Packet.cpp
-CMakeFiles/server.dir/src/Packet.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/Packet.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/Packet.cpp.o -MF CMakeFiles/server.dir/src/Packet.cpp.o.d -o CMakeFiles/server.dir/src/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Packet.cpp
+CMakeFiles/server.dir/src/net/Protocol.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/net/Protocol.cpp.o: ../src/net/Protocol.cpp
+CMakeFiles/server.dir/src/net/Protocol.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/net/Protocol.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/net/Protocol.cpp.o -MF CMakeFiles/server.dir/src/net/Protocol.cpp.o.d -o CMakeFiles/server.dir/src/net/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp
 
-CMakeFiles/server.dir/src/Packet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/Packet.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/Packet.cpp > CMakeFiles/server.dir/src/Packet.cpp.i
+CMakeFiles/server.dir/src/net/Protocol.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/net/Protocol.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp > CMakeFiles/server.dir/src/net/Protocol.cpp.i
 
-CMakeFiles/server.dir/src/Packet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/Packet.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/Packet.cpp -o CMakeFiles/server.dir/src/Packet.cpp.s
+CMakeFiles/server.dir/src/net/Protocol.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/net/Protocol.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp -o CMakeFiles/server.dir/src/net/Protocol.cpp.s
 
-CMakeFiles/server.dir/src/Crawler.cpp.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/src/Crawler.cpp.o: ../src/Crawler.cpp
-CMakeFiles/server.dir/src/Crawler.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/src/Crawler.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/Crawler.cpp.o -MF CMakeFiles/server.dir/src/Crawler.cpp.o.d -o CMakeFiles/server.dir/src/Crawler.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Crawler.cpp
+CMakeFiles/server.dir/src/net/Packet.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/net/Packet.cpp.o: ../src/net/Packet.cpp
+CMakeFiles/server.dir/src/net/Packet.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/src/net/Packet.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/net/Packet.cpp.o -MF CMakeFiles/server.dir/src/net/Packet.cpp.o.d -o CMakeFiles/server.dir/src/net/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp
 
-CMakeFiles/server.dir/src/Crawler.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/Crawler.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/Crawler.cpp > CMakeFiles/server.dir/src/Crawler.cpp.i
+CMakeFiles/server.dir/src/net/Packet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/net/Packet.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp > CMakeFiles/server.dir/src/net/Packet.cpp.i
 
-CMakeFiles/server.dir/src/Crawler.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/Crawler.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/Crawler.cpp -o CMakeFiles/server.dir/src/Crawler.cpp.s
+CMakeFiles/server.dir/src/net/Packet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/net/Packet.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp -o CMakeFiles/server.dir/src/net/Packet.cpp.s
+
+CMakeFiles/server.dir/src/net/Connection.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/net/Connection.cpp.o: ../src/net/Connection.cpp
+CMakeFiles/server.dir/src/net/Connection.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/src/net/Connection.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/net/Connection.cpp.o -MF CMakeFiles/server.dir/src/net/Connection.cpp.o.d -o CMakeFiles/server.dir/src/net/Connection.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Connection.cpp
+
+CMakeFiles/server.dir/src/net/Connection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/net/Connection.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/net/Connection.cpp > CMakeFiles/server.dir/src/net/Connection.cpp.i
+
+CMakeFiles/server.dir/src/net/Connection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/net/Connection.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/net/Connection.cpp -o CMakeFiles/server.dir/src/net/Connection.cpp.s
+
+CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o: ../src/net/ConnectionManager.cpp
+CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o -MF CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o.d -o CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/ConnectionManager.cpp
+
+CMakeFiles/server.dir/src/net/ConnectionManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/net/ConnectionManager.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/net/ConnectionManager.cpp > CMakeFiles/server.dir/src/net/ConnectionManager.cpp.i
+
+CMakeFiles/server.dir/src/net/ConnectionManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/net/ConnectionManager.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/net/ConnectionManager.cpp -o CMakeFiles/server.dir/src/net/ConnectionManager.cpp.s
+
+CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o: ../src/threading/ThreadPool.cpp
+CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o -MF CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o.d -o CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/threading/ThreadPool.cpp
+
+CMakeFiles/server.dir/src/threading/ThreadPool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/server.dir/src/threading/ThreadPool.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/threading/ThreadPool.cpp > CMakeFiles/server.dir/src/threading/ThreadPool.cpp.i
+
+CMakeFiles/server.dir/src/threading/ThreadPool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/threading/ThreadPool.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/threading/ThreadPool.cpp -o CMakeFiles/server.dir/src/threading/ThreadPool.cpp.s
 
 # Object files for target server
 server_OBJECTS = \
-"CMakeFiles/server.dir/src/Server.cpp.o" \
-"CMakeFiles/server.dir/src/Protocol.cpp.o" \
-"CMakeFiles/server.dir/src/Packet.cpp.o" \
-"CMakeFiles/server.dir/src/Crawler.cpp.o"
+"CMakeFiles/server.dir/main/main_server.cpp.o" \
+"CMakeFiles/server.dir/src/app/Server.cpp.o" \
+"CMakeFiles/server.dir/src/net/Protocol.cpp.o" \
+"CMakeFiles/server.dir/src/net/Packet.cpp.o" \
+"CMakeFiles/server.dir/src/net/Connection.cpp.o" \
+"CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o" \
+"CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o"
 
 # External object files for target server
 server_EXTERNAL_OBJECTS =
 
-server: CMakeFiles/server.dir/src/Server.cpp.o
-server: CMakeFiles/server.dir/src/Protocol.cpp.o
-server: CMakeFiles/server.dir/src/Packet.cpp.o
-server: CMakeFiles/server.dir/src/Crawler.cpp.o
+server: CMakeFiles/server.dir/main/main_server.cpp.o
+server: CMakeFiles/server.dir/src/app/Server.cpp.o
+server: CMakeFiles/server.dir/src/net/Protocol.cpp.o
+server: CMakeFiles/server.dir/src/net/Packet.cpp.o
+server: CMakeFiles/server.dir/src/net/Connection.cpp.o
+server: CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o
+server: CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o
 server: CMakeFiles/server.dir/build.make
-server: /usr/lib/x86_64-linux-gnu/libcurl.so
 server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

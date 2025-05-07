@@ -27,6 +27,8 @@ public:
     // 例如：pool.enqueue([]{std::cout << "Hello, World!" << std::endl;});
     // 这样就可以向线程池提交一个任务，任务的内容是打印一句话   
     void enqueue(Task task);
+    void shutdown();
+    void wait();
 
 private:
     std::vector<std::thread> workers;  // 工作线程

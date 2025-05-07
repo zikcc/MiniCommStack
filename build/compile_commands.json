@@ -1,37 +1,72 @@
 [
 {
   "directory": "/home/lzk/Desktop/MiniCommStack/build",
-  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/server.dir/src/Server.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Server.cpp",
-  "file": "/home/lzk/Desktop/MiniCommStack/src/Server.cpp"
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/server.dir/main/main_server.cpp.o -c /home/lzk/Desktop/MiniCommStack/main/main_server.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/main/main_server.cpp"
 },
 {
   "directory": "/home/lzk/Desktop/MiniCommStack/build",
-  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/server.dir/src/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp",
-  "file": "/home/lzk/Desktop/MiniCommStack/src/Protocol.cpp"
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/server.dir/src/app/Server.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/app/Server.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/app/Server.cpp"
 },
 {
   "directory": "/home/lzk/Desktop/MiniCommStack/build",
-  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/server.dir/src/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Packet.cpp",
-  "file": "/home/lzk/Desktop/MiniCommStack/src/Packet.cpp"
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/server.dir/src/net/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp"
 },
 {
   "directory": "/home/lzk/Desktop/MiniCommStack/build",
-  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/server.dir/src/Crawler.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Crawler.cpp",
-  "file": "/home/lzk/Desktop/MiniCommStack/src/Crawler.cpp"
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/server.dir/src/net/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp"
 },
 {
   "directory": "/home/lzk/Desktop/MiniCommStack/build",
-  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/client.dir/src/Client.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Client.cpp",
-  "file": "/home/lzk/Desktop/MiniCommStack/src/Client.cpp"
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/server.dir/src/net/Connection.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Connection.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/net/Connection.cpp"
 },
 {
   "directory": "/home/lzk/Desktop/MiniCommStack/build",
-  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/client.dir/src/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp",
-  "file": "/home/lzk/Desktop/MiniCommStack/src/Protocol.cpp"
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/ConnectionManager.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/net/ConnectionManager.cpp"
 },
 {
   "directory": "/home/lzk/Desktop/MiniCommStack/build",
-  "command": "/usr/bin/g++  -I/home/lzk/Desktop/MiniCommStack/include -g -std=gnu++20 -o CMakeFiles/client.dir/src/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Packet.cpp",
-  "file": "/home/lzk/Desktop/MiniCommStack/src/Packet.cpp"
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/threading/ThreadPool.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/threading/ThreadPool.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/client.dir/main/main_client.cpp.o -c /home/lzk/Desktop/MiniCommStack/main/main_client.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/main/main_client.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/client.dir/src/net/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/client.dir/src/net/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/load_test.dir/main/main_load_test.cpp.o -c /home/lzk/Desktop/MiniCommStack/main/main_load_test.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/main/main_load_test.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/load_test.dir/src/load_test/LoadTester.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/load_test/LoadTester.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/load_test/LoadTester.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/load_test.dir/src/net/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp"
+},
+{
+  "directory": "/home/lzk/Desktop/MiniCommStack/build",
+  "command": "/usr/bin/c++  -I/home/lzk/Desktop/MiniCommStack/include -O3 -DNDEBUG -std=gnu++20 -o CMakeFiles/load_test.dir/src/net/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp",
+  "file": "/home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp"
 }
 ]

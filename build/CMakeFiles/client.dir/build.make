@@ -69,60 +69,60 @@ include CMakeFiles/client.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/client.dir/flags.make
 
-CMakeFiles/client.dir/src/Client.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/src/Client.cpp.o: ../src/Client.cpp
-CMakeFiles/client.dir/src/Client.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/src/Client.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/Client.cpp.o -MF CMakeFiles/client.dir/src/Client.cpp.o.d -o CMakeFiles/client.dir/src/Client.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Client.cpp
+CMakeFiles/client.dir/main/main_client.cpp.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/main/main_client.cpp.o: ../main/main_client.cpp
+CMakeFiles/client.dir/main/main_client.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/client.dir/main/main_client.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/main/main_client.cpp.o -MF CMakeFiles/client.dir/main/main_client.cpp.o.d -o CMakeFiles/client.dir/main/main_client.cpp.o -c /home/lzk/Desktop/MiniCommStack/main/main_client.cpp
 
-CMakeFiles/client.dir/src/Client.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/Client.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/Client.cpp > CMakeFiles/client.dir/src/Client.cpp.i
+CMakeFiles/client.dir/main/main_client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/main/main_client.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/main/main_client.cpp > CMakeFiles/client.dir/main/main_client.cpp.i
 
-CMakeFiles/client.dir/src/Client.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/Client.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/Client.cpp -o CMakeFiles/client.dir/src/Client.cpp.s
+CMakeFiles/client.dir/main/main_client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/main/main_client.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/main/main_client.cpp -o CMakeFiles/client.dir/main/main_client.cpp.s
 
-CMakeFiles/client.dir/src/Protocol.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/src/Protocol.cpp.o: ../src/Protocol.cpp
-CMakeFiles/client.dir/src/Protocol.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/src/Protocol.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/Protocol.cpp.o -MF CMakeFiles/client.dir/src/Protocol.cpp.o.d -o CMakeFiles/client.dir/src/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp
+CMakeFiles/client.dir/src/net/Protocol.cpp.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/src/net/Protocol.cpp.o: ../src/net/Protocol.cpp
+CMakeFiles/client.dir/src/net/Protocol.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/client.dir/src/net/Protocol.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/net/Protocol.cpp.o -MF CMakeFiles/client.dir/src/net/Protocol.cpp.o.d -o CMakeFiles/client.dir/src/net/Protocol.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp
 
-CMakeFiles/client.dir/src/Protocol.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/Protocol.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp > CMakeFiles/client.dir/src/Protocol.cpp.i
+CMakeFiles/client.dir/src/net/Protocol.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/net/Protocol.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp > CMakeFiles/client.dir/src/net/Protocol.cpp.i
 
-CMakeFiles/client.dir/src/Protocol.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/Protocol.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/Protocol.cpp -o CMakeFiles/client.dir/src/Protocol.cpp.s
+CMakeFiles/client.dir/src/net/Protocol.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/net/Protocol.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp -o CMakeFiles/client.dir/src/net/Protocol.cpp.s
 
-CMakeFiles/client.dir/src/Packet.cpp.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/src/Packet.cpp.o: ../src/Packet.cpp
-CMakeFiles/client.dir/src/Packet.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/client.dir/src/Packet.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/Packet.cpp.o -MF CMakeFiles/client.dir/src/Packet.cpp.o.d -o CMakeFiles/client.dir/src/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/Packet.cpp
+CMakeFiles/client.dir/src/net/Packet.cpp.o: CMakeFiles/client.dir/flags.make
+CMakeFiles/client.dir/src/net/Packet.cpp.o: ../src/net/Packet.cpp
+CMakeFiles/client.dir/src/net/Packet.cpp.o: CMakeFiles/client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/client.dir/src/net/Packet.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/client.dir/src/net/Packet.cpp.o -MF CMakeFiles/client.dir/src/net/Packet.cpp.o.d -o CMakeFiles/client.dir/src/net/Packet.cpp.o -c /home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp
 
-CMakeFiles/client.dir/src/Packet.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/Packet.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/Packet.cpp > CMakeFiles/client.dir/src/Packet.cpp.i
+CMakeFiles/client.dir/src/net/Packet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/client.dir/src/net/Packet.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp > CMakeFiles/client.dir/src/net/Packet.cpp.i
 
-CMakeFiles/client.dir/src/Packet.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/Packet.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/Packet.cpp -o CMakeFiles/client.dir/src/Packet.cpp.s
+CMakeFiles/client.dir/src/net/Packet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/client.dir/src/net/Packet.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp -o CMakeFiles/client.dir/src/net/Packet.cpp.s
 
 # Object files for target client
 client_OBJECTS = \
-"CMakeFiles/client.dir/src/Client.cpp.o" \
-"CMakeFiles/client.dir/src/Protocol.cpp.o" \
-"CMakeFiles/client.dir/src/Packet.cpp.o"
+"CMakeFiles/client.dir/main/main_client.cpp.o" \
+"CMakeFiles/client.dir/src/net/Protocol.cpp.o" \
+"CMakeFiles/client.dir/src/net/Packet.cpp.o"
 
 # External object files for target client
 client_EXTERNAL_OBJECTS =
 
-client: CMakeFiles/client.dir/src/Client.cpp.o
-client: CMakeFiles/client.dir/src/Protocol.cpp.o
-client: CMakeFiles/client.dir/src/Packet.cpp.o
+client: CMakeFiles/client.dir/main/main_client.cpp.o
+client: CMakeFiles/client.dir/src/net/Protocol.cpp.o
+client: CMakeFiles/client.dir/src/net/Packet.cpp.o
 client: CMakeFiles/client.dir/build.make
 client: CMakeFiles/client.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/lzk/Desktop/MiniCommStack/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable client"

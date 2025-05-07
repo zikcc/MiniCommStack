@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/lzk/Desktop/MiniCommStack/src/Client.cpp" "CMakeFiles/client.dir/src/Client.cpp.o" "gcc" "CMakeFiles/client.dir/src/Client.cpp.o.d"
-  "/home/lzk/Desktop/MiniCommStack/src/Packet.cpp" "CMakeFiles/client.dir/src/Packet.cpp.o" "gcc" "CMakeFiles/client.dir/src/Packet.cpp.o.d"
-  "/home/lzk/Desktop/MiniCommStack/src/Protocol.cpp" "CMakeFiles/client.dir/src/Protocol.cpp.o" "gcc" "CMakeFiles/client.dir/src/Protocol.cpp.o.d"
+  "/home/lzk/Desktop/MiniCommStack/main/main_client.cpp" "CMakeFiles/client.dir/main/main_client.cpp.o" "gcc" "CMakeFiles/client.dir/main/main_client.cpp.o.d"
+  "/home/lzk/Desktop/MiniCommStack/src/net/Packet.cpp" "CMakeFiles/client.dir/src/net/Packet.cpp.o" "gcc" "CMakeFiles/client.dir/src/net/Packet.cpp.o.d"
+  "/home/lzk/Desktop/MiniCommStack/src/net/Protocol.cpp" "CMakeFiles/client.dir/src/net/Protocol.cpp.o" "gcc" "CMakeFiles/client.dir/src/net/Protocol.cpp.o.d"
   )
 
 # Targets to which this target links.

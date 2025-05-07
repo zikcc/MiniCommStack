@@ -8,7 +8,7 @@ struct ServerConfig {
     int backlog = 1024;
     
     // 线程池配置
-    int thread_pool_size = 4;  // 默认使用CPU核心数
+    int thread_pool_size = 8;  // 默认使用CPU核心数
     
     // 缓冲区配置
     size_t read_buffer_size = 8192;

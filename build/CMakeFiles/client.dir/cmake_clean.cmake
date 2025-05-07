@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/client.dir/src/Client.cpp.o"
-  "CMakeFiles/client.dir/src/Client.cpp.o.d"
-  "CMakeFiles/client.dir/src/Packet.cpp.o"
-  "CMakeFiles/client.dir/src/Packet.cpp.o.d"
-  "CMakeFiles/client.dir/src/Protocol.cpp.o"
-  "CMakeFiles/client.dir/src/Protocol.cpp.o.d"
+  "CMakeFiles/client.dir/main/main_client.cpp.o"
+  "CMakeFiles/client.dir/main/main_client.cpp.o.d"
+  "CMakeFiles/client.dir/src/net/Packet.cpp.o"
+  "CMakeFiles/client.dir/src/net/Packet.cpp.o.d"
+  "CMakeFiles/client.dir/src/net/Protocol.cpp.o"
+  "CMakeFiles/client.dir/src/net/Protocol.cpp.o.d"
   "client"
   "client.pdb"
 )

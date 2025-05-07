@@ -1,1 +1,1 @@
-/usr/bin/g++ -g CMakeFiles/client.dir/src/Client.cpp.o CMakeFiles/client.dir/src/Protocol.cpp.o CMakeFiles/client.dir/src/Packet.cpp.o -o client 
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/client.dir/main/main_client.cpp.o CMakeFiles/client.dir/src/net/Protocol.cpp.o CMakeFiles/client.dir/src/net/Packet.cpp.o -o client 

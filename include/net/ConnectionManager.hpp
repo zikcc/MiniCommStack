@@ -1,19 +1,22 @@
-#ifndef CONNECTION_MANAGER_H
-#define CONNECTION_MANAGER_H
+#pragma once  // 防止头文件重复包含
 
-#include <unordered_map>
 #include <memory>
+#include <shared_mutex>
+#include <unordered_map>
+
 #include "net/Connection.hpp"
 
 class ConnectionManager {
-public:
+   public:
     void addConnection(int fd, std::shared_ptr<Connection> conn);
     void removeConnection(int fd);
-    std::shared_ptr<Connection> getConnection(int fd);
-    const std::unordered_map<int, std::shared_ptr<Connection>>& getAllConnections() const { return connections; }
+    std::shared_ptr<Connection> getConnection(int fd) const;
+    const std::unordered_map<int, std::shared_ptr<Connection>>&
+    getAllConnections() const {
+        return connections_;
+    }
 
-private:
-    std::unordered_map<int, std::shared_ptr<Connection>> connections;
+   private:
+    mutable std::shared_mutex mutex_;
+    std::unordered_map<int, std::shared_ptr<Connection>> connections_;
 };
-
-#endif // CONNECTION_MANAGER_H

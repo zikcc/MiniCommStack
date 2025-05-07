@@ -1,21 +1,61 @@
 cmake_minimum_required(VERSION 3.10)
-project(MiniCommStack)
+project(MiniCommStack LANGUAGES CXX)
 
-# 设置C++标准
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-# 查找 curl
-find_package(CURL REQUIRED)
-# 添加include目录
-include_directories(${PROJECT_SOURCE_DIR}/include)
-# aux_source_directory(${PROJECT_SOURCE_DIR}/src SRC_FILES)
 
-# 添加可执行文件
-# add_executable(server ${SRC_FILES})
-# add_executable(client ${SRC_FILES})
-add_executable(server src/Server.cpp src/Protocol.cpp src/Packet.cpp src/Crawler.cpp)
-add_executable(client src/Client.cpp src/Protocol.cpp src/Packet.cpp)
+find_package(Threads REQUIRED)
 
-# 链接 curl 到你的目标
-target_link_libraries(server CURL::libcurl)
+# 1) 协议
+set(NET_SRCS
+    src/net/Protocol.cpp
+    src/net/Packet.cpp
+)
+
+# 2) 连接
+set(CONNECTION_SRCS
+    src/net/Connection.cpp
+    src/net/ConnectionManager.cpp
+)
+
+# 3) threading 线程池
+set(THREADING_SRCS
+    src/threading/ThreadPool.cpp
+)
+
+# ----- server -----
+add_executable(server
+    main/main_server.cpp
+    src/app/Server.cpp
+    ${NET_SRCS}
+    ${CONNECTION_SRCS}
+    ${THREADING_SRCS}
+)
+target_include_directories(server PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+target_link_libraries(server PRIVATE
+    Threads::Threads
+)
+
+# ----- client -----
+add_executable(client
+    main/main_client.cpp
+    ${NET_SRCS}     
+)
+target_include_directories(client PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+# ----- load_test -----
+add_executable(load_test
+    main/main_load_test.cpp
+    src/load_test/LoadTester.cpp
+    ${NET_SRCS}
+)
+target_include_directories(load_test PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+target_link_libraries(load_test PRIVATE
+    Threads::Threads
+)

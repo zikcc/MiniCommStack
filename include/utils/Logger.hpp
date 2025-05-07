@@ -1,6 +1,5 @@
 #pragma once
 
-#include <string>
 #include <iostream>
 #include <sstream>
 #include <mutex>
@@ -65,7 +64,14 @@ private:
 
         // Format the message
         char buffer[1024];
-        snprintf(buffer, sizeof(buffer), format, args...);
+        if constexpr (sizeof...(args) > 0) {
+            // 有额外格式化参数，按 用户 format + args 来 snprintf
+            std::snprintf(buffer, sizeof(buffer), format, args...);
+        } else {
+            // 没有参数，直接把 format 当作普通字符串拷贝
+            std::snprintf(buffer, sizeof(buffer), "%s", format);
+        }
+
         ss << buffer << std::endl;
 
         std::cout << ss.str();

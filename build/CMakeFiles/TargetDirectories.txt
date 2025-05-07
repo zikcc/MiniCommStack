@@ -1,5 +1,0 @@
-/home/lzk/Desktop/MiniCommStack/build/CMakeFiles/server.dir
-/home/lzk/Desktop/MiniCommStack/build/CMakeFiles/client.dir
-/home/lzk/Desktop/MiniCommStack/build/CMakeFiles/load_test.dir
-/home/lzk/Desktop/MiniCommStack/build/CMakeFiles/edit_cache.dir
-/home/lzk/Desktop/MiniCommStack/build/CMakeFiles/rebuild_cache.dir

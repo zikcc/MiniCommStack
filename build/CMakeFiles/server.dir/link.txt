@@ -1,1 +1,0 @@
-/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/server.dir/main/main_server.cpp.o CMakeFiles/server.dir/src/app/Server.cpp.o CMakeFiles/server.dir/src/net/Protocol.cpp.o CMakeFiles/server.dir/src/net/Packet.cpp.o CMakeFiles/server.dir/src/net/Connection.cpp.o CMakeFiles/server.dir/src/net/ConnectionManager.cpp.o CMakeFiles/server.dir/src/threading/ThreadPool.cpp.o -o server 

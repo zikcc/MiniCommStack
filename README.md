@@ -66,39 +66,40 @@
 ## 📁 目录结构
 
 ```
-MiniCommStack/
-+ include/                
-+  app/                  
-+     Server.hpp        
-+     ServerConfig.hpp       
-+  load_test/           
-+     LoadTester.hpp   
-+  net/                  
-+     Connection.hpp    
-+     ConnectionManager.hpp    
-+     Packet.hpp        
-+     Protocol.hpp      
-+  threading/           
-+     ThreadPool.hpp  
-+ main/                 
-+  main_server.cpp  
-+  main_load_test.cpp
-+  main_client.cpp  
-+ src/                    
-+  app/                
-+     Server.cpp      
-+  load_test/         
-+     LoadTester.cpp
-+  net/                
-+     Connection.cpp  
-+     ConnectionManager.cpp  
-+     Packet.cpp        
-+     Protocol.cpp      
-+  threading/        
-+     ThreadPool.cpp  
-+ CMakeLists.txt        
-+ build.sh              
-+ run.sh                
+MiniCommStack
+├──  include/                
+├──  app/                  
+├──     Server.hpp        
+├──     ServerConfig.hpp       
+├──  load_test/           
+├──     LoadTester.hpp   
+├──  net/                  
+├──     Connection.hpp    
+├──     ConnectionManager.hpp    
+├──     Packet.hpp        
+├──     Protocol.hpp      
+├──  threading/           
+├──     ThreadPool.hpp  
+├── main/                 
+├──  main_server.cpp  
+├──  main_load_test.cpp
+├──  main_client.cpp  
+├── src/                    
+├──  app/                
+├──     Server.cpp      
+├──  load_test/         
+├──     LoadTester.cpp
+├──  net/                
+├──     Connection.cpp  
+├──     ConnectionManager.cpp  
+├──     Packet.cpp        
+├──     Protocol.cpp      
+├──  threading/        
+├──     ThreadPool.cpp  
+├── CMakeLists.txt        
+├── build.sh              
+└── run.sh     
+
 ```
 
 ---

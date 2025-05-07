@@ -136,7 +136,7 @@ MiniCommStack
 1. **克隆仓库**
 
    ```bash
-   git clone https://github.com/yourname/MiniCommStack.git
+   git clone https://github.com/zikcc/MiniCommStack.git
    cd MiniCommStack
    ```
 

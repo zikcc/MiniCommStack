@@ -3,8 +3,57 @@ project(MiniCommStack LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+# —— 找到 libv4l2 —— 
+find_path(V4L2_INCLUDE_DIR
+  NAMES linux/videodev2.h
+  HINTS /usr/include /usr/local/include
+)
+find_library(V4L2_LIBRARY
+  NAMES v4l2
+  HINTS /usr/lib /usr/local/lib
+)
+
+# 线程库
 find_package(Threads REQUIRED)
+
+# OpenCV
+set(OpenCV_DIR "/usr/local/lib/cmake/opencv4") 
+find_package(OpenCV 4.9 REQUIRED)
+message(STATUS "Found OpenCV ${OpenCV_VERSION}")
+
+# GoogleTest（嵌入式在 tests 子目录中引入）
+add_subdirectory(thirdparty/googletest)
+
+# 如果要编译测试
+option(BUILD_TESTING "Build tests" ON)
+if (BUILD_TESTING)
+    enable_testing()
+    add_subdirectory(tests)
+endif()
+
+# —— vision 库 —— 
+add_library(vision
+    src/vision/V4L2Capture.cpp
+    include/vision/V4L2Capture.hpp
+)
+
+# 导出头文件位置
+target_include_directories(vision
+    PUBLIC  ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
+
+# 链接 libv4l2、OpenCV、线程库等
+target_include_directories(vision
+    PRIVATE ${V4L2_INCLUDE_DIR}
+)
+target_link_libraries(vision
+    PRIVATE
+      ${V4L2_LIBRARY}
+      ${OpenCV_LIBS}
+      Threads::Threads
+)
 
 # 1) 协议
 set(NET_SRCS

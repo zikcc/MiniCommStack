@@ -1,53 +1,89 @@
 #include "vision/OpenCVProcessor.hpp"
-#include "opencv2/core/mat.hpp"
 
-OpenCVProcessor::OpenCVProcessor(const std::string& output_path, PixelFormat fmt,  unsigned width, unsigned height) : pixel_format_(fmt), width_(width), height_(height){
-    const int fourcc = cv::VideoWriter::fourcc('a','v','c','1');
-    const double fps = 30.0;
-    const cv::Size frame_size(width, height);
-    
-    writer_.open(output_path, fourcc, fps, frame_size);
-    if (!writer_.isOpened()) {
-        throw std::runtime_error("Failed to initialize video writer");
+#include <cmath>
+#include <cstdint>
+#include <filesystem>
+#include <iomanip>
+#include <opencv2/core/mat.hpp>
+#include <sstream>
+#include <stdexcept>
+#include <vector>
+
+namespace fs = std::filesystem;
+
+OpenCVProcessor::OpenCVProcessor(PixelFormat fmt, unsigned width,
+                                 unsigned height)
+    : pixel_format_(fmt), width_(width), height_(height) {}
+
+bool OpenCVProcessor::Decode2RGB(const std::vector<uint8_t>& raw_data,
+                                 cv::Mat& RGBFrame) {
+    if (raw_data.empty()) {
+        std::cerr << "接收到的数据为空! " << std::endl;
+        return false;
     }
-}
-
-OpenCVProcessor::~OpenCVProcessor() {
-    if (writer_.isOpened()) writer_.release();
-}
-
-void OpenCVProcessor::process_frame(const std::vector<uint8_t>& raw_data) {
-    cv:: Mat frame;
+    cv::Mat frame;
     if (pixel_format_ == PixelFormat::MJPEG) {
-        // MJPEG解码
-        cv::Mat raw_mat(1, raw_data.size(), CV_8UC1, (void*)raw_data.data());
-        cv::Mat frame = cv::imdecode(raw_mat, cv::IMREAD_COLOR);
+        // MJPEG 解码（BGR 格式）
+        cv::Mat raw_mat(1, static_cast<int>(raw_data.size()), CV_8UC1,
+                        const_cast<uint8_t*>(raw_data.data()));
+        frame = cv::imdecode(raw_mat, cv::IMREAD_COLOR);
+        if (frame.empty()) {
+            std::cerr << "MJPEG 解码失败! " << std::endl;
+            return false;
+        }
+        // BGR → RGB 转换
+        cv::cvtColor(frame, RGBFrame, cv::COLOR_BGR2RGB);
     } else if (pixel_format_ == PixelFormat::YUYV) {
-        // 将 YUYV 数据转换为 Mat
-        cv::Mat yuyv(height_, width_, CV_8UC2, (void*)raw_data.data());
+        // 验证 YUYV 数据大小
+        size_t expected_size = width_ * height_ * 2;
+        if (raw_data.size() != expected_size) {
+            throw std::runtime_error(
+                "YUYV 数据大小错误: 期望 " + std::to_string(expected_size) +
+                " 字节，实际 " + std::to_string(raw_data.size()));
+            return false;
+        }
+        // YUYV → BGR
+        // 创建 YUYV Mat 对象
+        cv::Mat yuyv_frame(height_, width_, CV_8UC2, (void*)raw_data.data());
+        if (yuyv_frame.empty()) {
+            throw std::runtime_error("YUYV 帧数据为空");
+            return false;
+        }
+        cv::cvtColor(yuyv_frame, RGBFrame, cv::COLOR_YUV2RGB_YUYV);
+    }
+    return true;
+}
 
-        // 转换 YUYV → BGR
-        cv::cvtColor(yuyv, frame, cv::COLOR_YUV2BGR_YUYV);
+std::string OpenCVProcessor::process_and_save(const std::string& output_dir,
+                                              cv::Mat& RGBFrame) {
+    // 确保输出目录存在
+    if (!fs::exists(output_dir)) {
+        if (!fs::create_directories(output_dir)) {
+            throw std::runtime_error("Failed to create output directory: " +
+                                     output_dir);
+        }
     }
-    
-    if (!frame.empty()) {
-        // 转换为 RGB
-        cv::cvtColor(frame, current_frame_, cv::COLOR_BGR2RGB);
-        apply_algorithm(current_frame_);
-        frame_count_++;
+    apply_algorithm(RGBFrame);
+
+    // 生成文件名：例如 output_dir_/frame_0001.png
+    std::ostringstream oss;
+    oss << output_dir << "/frame_" << std::setfill('0') << std::setw(4)
+        << frame_count_++ << ".png";
+    std::string file_path = oss.str();
+
+    // 保存
+    if (!cv::imwrite(file_path, RGBFrame)) {
+        std::cerr << "图片保存失败! " << std::endl;
+        return "";
     }
+
+    return file_path;
 }
 
 void OpenCVProcessor::apply_algorithm(cv::Mat& frame) {
-    // 示例算法：Canny边缘检测
+    // 示例：Canny 边缘检测
     cv::Mat gray, edges;
     cv::cvtColor(frame, gray, cv::COLOR_RGB2GRAY);
     cv::Canny(gray, edges, 100, 200);
     cv::cvtColor(edges, frame, cv::COLOR_GRAY2RGB);
-}
-
-void OpenCVProcessor::save_output() {
-    if (writer_.isOpened() && !current_frame_.empty()) {
-        writer_.write(current_frame_);
-    }
 }

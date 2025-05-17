@@ -14,13 +14,16 @@ find_library(V4L2_LIBRARY
   NAMES v4l2
   HINTS /usr/lib /usr/local/lib
 )
-
+# 查找 SDL2 库
+find_package(SDL2 REQUIRED)
+include_directories(${SDL2_INCLUDE_DIRS})
 # 线程库
 find_package(Threads REQUIRED)
 
 # OpenCV
 set(OpenCV_DIR "/usr/local/lib/cmake/opencv4") 
-find_package(OpenCV 4.9 REQUIRED)
+# set(OpenCV_DIR "/usr/local/include/opencv4") 
+find_package(OpenCV REQUIRED)
 message(STATUS "Found OpenCV ${OpenCV_VERSION}")
 
 # GoogleTest（嵌入式在 tests 子目录中引入）
@@ -36,20 +39,19 @@ endif()
 # —— vision 库 —— 
 add_library(vision
     src/vision/V4L2Capture.cpp
-    include/vision/V4L2Capture.hpp
+    src/vision/OpenCVProcessor.cpp
 )
 
 # 导出头文件位置
 target_include_directories(vision
     PUBLIC  ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
-
-# 链接 libv4l2、OpenCV、线程库等
 target_include_directories(vision
-    PRIVATE ${V4L2_INCLUDE_DIR}
+    PUBLIC 
+      ${V4L2_INCLUDE_DIR}
 )
 target_link_libraries(vision
-    PRIVATE
+    PUBLIC
       ${V4L2_LIBRARY}
       ${OpenCV_LIBS}
       Threads::Threads
@@ -95,7 +97,14 @@ add_executable(client
 target_include_directories(client PRIVATE
     ${PROJECT_SOURCE_DIR}/include
 )
-
+# ----- local_display -----
+add_executable(local_display
+    src/vision/LocalDisplay.cpp   
+)
+target_link_libraries(local_display PRIVATE
+    ${SDL2_LIBRARIES} 
+    vision
+)
 # ----- load_test -----
 add_executable(load_test
     main/main_load_test.cpp

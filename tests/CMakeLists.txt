@@ -1,30 +1,25 @@
 cmake_minimum_required(VERSION 3.14)
 project(VisionTests LANGUAGES CXX)
-
+# 自动发现并注册测试
+include(GoogleTest)
 set(CMAKE_CXX_STANDARD 17)
 
 find_package(GTest REQUIRED)
-find_package(Threads REQUIRED)
-
 # 测试可执行文件
 add_executable(v4l2_tests
     test_v4l2.cpp
 )
-
-# 包含主工程的头文件
-target_include_directories(v4l2_tests PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}/../include
+# 测试可执行文件
+add_executable(ar_tests
+    test_ar.cpp
 )
-
-# 链接 vision 库、GTest、线程库
-target_link_libraries(v4l2_tests
-    PRIVATE
-      vision
-      GTest::GTest
-      GTest::Main
-      Threads::Threads
-)
-
-# 自动发现并注册测试
-include(GoogleTest)
-gtest_discover_tests(v4l2_tests)
+# 链接依赖库（包括 vision、gtest、线程库）
+foreach(test_target IN ITEMS v4l2_tests ar_tests)
+    target_link_libraries(${test_target}
+        PRIVATE
+            vision
+            GTest::GTest
+            GTest::Main
+    )
+    gtest_discover_tests(${test_target})
+endforeach()

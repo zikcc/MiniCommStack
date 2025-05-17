@@ -1,4 +1,5 @@
 #include "vision/V4L2Capture.hpp"
+#include <iostream>
 
 #include <fcntl.h>
 #include <sys/ioctl.h>
@@ -121,6 +122,10 @@ bool V4L2Capture::capture_frame(std::vector<uint8_t>& buffer) {
             // 成功取到一帧
             const auto* src = static_cast<uint8_t*>(mapped_buffers_[buf.index]);
             buffer.assign(src, src + buf.bytesused);
+            if (buffer.empty()) {
+                throw std::runtime_error("摄像头返回空数据");
+            }
+            // std::cout << "采集数据大小: " << buffer.size() << " 字节" << std::endl;
             // 重新入队
             ioctl(fd_, VIDIOC_QBUF, &buf);
             return !buffer.empty();

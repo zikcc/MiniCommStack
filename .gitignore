@@ -28,3 +28,6 @@ cmake_install.cmake
 *.bak
 .DS_Store
 
+# vscode
+.vscode/
+*.code-workspace

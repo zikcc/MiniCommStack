@@ -4,6 +4,7 @@ project(MiniCommStack LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_BUILD_TYPE Debug)  # 确保 Debug 模式
 
 # —— 找到 libv4l2 —— 
 find_path(V4L2_INCLUDE_DIR
@@ -17,6 +18,15 @@ find_library(V4L2_LIBRARY
 # 查找 SDL2 库
 find_package(SDL2 REQUIRED)
 include_directories(${SDL2_INCLUDE_DIRS})
+# FFmpeg
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(FFMPEG REQUIRED 
+    libavcodec 
+    libavformat 
+    libavutil 
+    libswscale 
+    libavdevice
+)
 # 线程库
 find_package(Threads REQUIRED)
 
@@ -99,11 +109,23 @@ target_include_directories(client PRIVATE
 )
 # ----- local_display -----
 add_executable(local_display
-    src/vision/LocalDisplay.cpp   
+    src/vision/LocalDisplayApp.cpp   
 )
 target_link_libraries(local_display PRIVATE
     ${SDL2_LIBRARIES} 
     vision
+)
+# ----- push_stream -----
+add_executable(push_stream
+    src/vision/PushStreamApp.cpp   
+    src/vision/RTMPStreamer.cpp   
+)
+target_link_libraries(push_stream PRIVATE
+    ${FFMPEG_LIBRARIES}
+    vision
+)
+target_include_directories(push_stream PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
 )
 # ----- load_test -----
 add_executable(load_test
@@ -117,3 +139,4 @@ target_include_directories(load_test PRIVATE
 target_link_libraries(load_test PRIVATE
     Threads::Threads
 )
+

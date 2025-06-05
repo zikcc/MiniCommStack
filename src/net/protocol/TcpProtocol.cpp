@@ -1,4 +1,4 @@
-#include "net/Protocol.hpp"
+#include "net/TcpProtocol.hpp"
 
 #include <arpa/inet.h>
 #include <unistd.h>
@@ -6,9 +6,10 @@
 #include <cstring>
 #include <stdexcept>
 #include <vector>
+#include "net/BaseProtocol.hpp"
 
 // 构造函数：初始化 socket 描述符和缓冲区
-Protocol::Protocol(int socket_fd)
+TcpProtocol::TcpProtocol(int socket_fd)
     : sockfd_(socket_fd)  // 初始化列表优于函数体内赋值
       ,
       send_buffer_()  // 显式初始化（可选，但提高可读性）
@@ -21,19 +22,19 @@ Protocol::Protocol(int socket_fd)
 }
 
 // 析构函数：无需关闭 socket（由 Connection 类管理）
-Protocol::~Protocol() {
+TcpProtocol::~TcpProtocol() {
     // 清空缓冲区（实际可省略，vector 析构时会自动释放）
     send_buffer_.clear();
     recv_buffer_.clear();
 }
 
 // 将接收到的数据包放入发送缓存区
-void Protocol::enqueuePacket(const Packet &pkt) {
+void TcpProtocol::enqueuePacket(const Packet &pkt) {
     auto data = pkt.serialize();
     send_buffer_.insert(send_buffer_.end(), data.begin(), data.end());
 }
 
-bool Protocol::flushSendBuffer(int &saved_errno) {
+bool TcpProtocol::flushSendBuffer(int &saved_errno) {
     saved_errno = 0;
     size_t total_sent = 0;
     while (total_sent < send_buffer_.size()) {
@@ -55,7 +56,7 @@ bool Protocol::flushSendBuffer(int &saved_errno) {
     return true;
 }
 
-Protocol::ReadStatus Protocol::tryReceivePacket(Packet &pkt) {
+BaseProtocol::ReadStatus TcpProtocol::tryReceivePacket(Packet &pkt) {
     // 1) 先从缓冲区尝试解析
     if (parseFromBuffer(recv_buffer_, pkt)) {
         return ReadStatus::OK;
@@ -90,7 +91,7 @@ Protocol::ReadStatus Protocol::tryReceivePacket(Packet &pkt) {
     }
 }
 
-bool Protocol::parseFromBuffer(std::vector<uint8_t> &buffer, Packet &pkt) {
+bool TcpProtocol::parseFromBuffer(std::vector<uint8_t> &buffer, Packet &pkt) {
     // 包头长度不足，无法解析
     if (buffer.size() < 6) return false;
 

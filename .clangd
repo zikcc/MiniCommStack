@@ -2,4 +2,3 @@
 CompileFlags:
     Add:
         - "--include-directory=./include"
-        - "--include-directory=/usr/local/include/opencv4"

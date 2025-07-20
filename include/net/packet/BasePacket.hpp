@@ -3,9 +3,9 @@
 class BasePacket {
     public:
         virtual ~BasePacket() = default;
-    
-        // 返回类型识别符
-        virtual uint16_t getTypeID() const = 0;
+        virtual uint16_t getTypeID() const = 0;  // 必须由子类实现协议类型ID
+        virtual uint8_t getVersion() const = 0;  // 协议版本控制
+   
     
         virtual std::vector<uint8_t> serialize() const = 0;
     

@@ -5,7 +5,7 @@
 #include <atomic>
 
 #include "app/ServerConfig.hpp"
-#include "net/ConnectionManager.hpp"
+#include "net/connection/ConnectionManager.hpp"
 #include "threading/ThreadPool.hpp"
 
 class Server {
